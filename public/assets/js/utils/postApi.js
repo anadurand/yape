@@ -15,5 +15,8 @@ const postRegisterNumber = (cellphone, termsChecked, updated) => {
 }
 
 const postResendCode = (cellphone)=>{
+    $.post("api/resendCode", {phone: cellphone}, function(result){
+
+    });
 
 }

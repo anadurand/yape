@@ -26,7 +26,7 @@ const updated = function(){
   render(root);
 }
 const state = {
-  screen: 2,
+  screen: null,
   termsChecked: false,
   phoneChecked: false,
   phoneNumber: null
@@ -38,5 +38,6 @@ $( _ => {
 
   const root = $(".root");
   render(root);
+  $('.carousel.carousel-slider').carousel({fullWidth: true});
 
 });

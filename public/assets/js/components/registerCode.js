@@ -24,7 +24,9 @@ const RegisterCode = (updated)=>{
   parent.append(divMessage);
 
 
-  
+  input.on("keyup", function(){
+    
+  });
 
   return parent;
 }
