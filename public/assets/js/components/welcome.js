@@ -2,7 +2,7 @@
 
 const Welcome = (updated) => {
   const parent = $('<div class="itial-parent"></div>');
-  const slide = $('<div class="carousel carousel-slider center initialized" data-indicators="true"></div>');
+  const slide = $('<div class="carousel carousel-slider center" data-indicators="true"></div>');
   const divPeople = $('<div class="carousel-item" href="#one!"></div>');
   const imgPeople = $('<img src="assets/img/icons/icon-people.png">');
   const h2People = $('<h2>Paga a tus amigos</h2>');
@@ -31,8 +31,8 @@ const Welcome = (updated) => {
   slide.append(divHappy);
   slide.append(divGroup);
 
-  parent.append(slide);
-  parent.append(button);
+  // parent.append(slide);
+  // parent.append(button);
 
   button.on("click", function(e){
     e.preventDefault();

@@ -4,7 +4,7 @@ const render = (root) => {
   root.empty();
   const wrapper = $('<div class="wrapper"></div>');
 
-  switch (state.screen) {
+  switch (state.pagina) {
     case null:
                 wrapper.append(Welcome(updated));
       break;
@@ -26,7 +26,7 @@ const updated = function(){
   render(root);
 }
 const state = {
-  screen: null,
+  pagina: null,
   termsChecked: false,
   phoneChecked: false,
   phoneNumber: null
