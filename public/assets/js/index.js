@@ -10,11 +10,24 @@ const render = (root) => {
       break;
     case 1:
                 wrapper.append(RegisterNumber(updated));
-
       break;
     case 2:
                 wrapper.append(RegisterCode(updated));
-
+      break;
+    case 3:
+                wrapper.append(CrearUsuario(updated));
+      break;
+    case 4:
+                wrapper.append(AcountSuccess(updated));
+      break;
+    case 5:
+                wrapper.append(RegisterCard(updated));
+      break;
+    case 6:
+                wrapper.append(RegisterCardPassword(updated));
+      break;
+    case 7:
+                wrapper.append(FinalState(updated));
       break;
 }
 
@@ -26,10 +39,15 @@ const updated = function(){
   render(root);
 }
 const state = {
-  pagina: 2,
+  pagina: 7,
   termsChecked: false,
   phoneChecked: false,
-  phoneNumber: null
+  phoneNumber: 123456789,
+  code: null,
+  userName: null,
+  userEmail: null,
+  userPassword: null,
+  creditCard: "1234567890876543"
 
 }
 

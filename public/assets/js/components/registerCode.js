@@ -8,10 +8,11 @@ const RegisterCode = (updated)=>{
   const h4 = $('<h4 class="gris-dark title-h4">Ahora ingresa tu código</h4>');
   const p = $('<p class="gris-letra title-p">Enviamos un SMS con el código de validación al número <span class="morado">'+ state.phoneNumber +'</span></p>');
   const divForm = $('<div class="div-input"></div>');
-  const icon = $('<img src="assets/img/icons/lock.png">');
+  const icon = $('<img src="assets/img/icons/lock.png" class="icono-code">');
   const input = $('<input type="text" id ="code" maxlength="6" class="center-align" required placeholder="-  -  -  -  -">');
   const divMessage = $('<div class="div-message"></div>');
   const message = $('<p>Reintentar en <img src="assets/img/icons/clock.png"> 21</p>');
+  const code = $('<span class="newCode">'+ state.code + '</span>');
 
   divImg.append(img);
   divForm.append(icon);
@@ -22,9 +23,17 @@ const RegisterCode = (updated)=>{
   parent.append(p);
   parent.append(divForm);
   parent.append(divMessage);
+  parent.append(code);
 
-
-  input.on("keyup", function(){
+  var count = setInterval(function(){postResendCode(state.phoneNumber);}, 21000);
+  input.on("keyup", function(e){
+    if(e.which>=48 && e.which<=57){
+      if(state.code == this.value){
+        clearInterval(count);
+        state.pagina = 3;
+        updated();
+      }
+    }
 
   });
 

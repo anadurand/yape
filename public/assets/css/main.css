@@ -22,10 +22,10 @@ body{
   color: #49233b;
 }
 .morado-light{
-  color: #451e36;
+  background-color: #451e36;
 }
 .morado-dark{
-  color: #38052a;
+  background-color: #38052a;
 }
 
 /*pagina welcome*/
@@ -81,16 +81,18 @@ body{
   position: relative;
   margin-top: 60px;
 }
-.div-input img{
+.div-input .icono-code{
   height: 30px;
   position: absolute;
   top: 7px;
   left: 10px;
 }
-input[type=tel], input[type=text]{
+input[type=tel], input[type=text],input[type=email],input[type=password]{
   font-size: 1.4rem;
+  /*box-shadow: 0 1px 0 0 #9e9e9e*/
 }
-input[type=tel]:focus:not([readonly]), input[type=text]:focus:not([readonly]){
+input[type=tel]:focus:not([readonly]), input[type=text]:focus:not([readonly]),input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]){
+  border: none;
   border-bottom: 1px solid #9e9e9e;
   box-shadow: 0 1px 0 0 #9e9e9e;
 }
@@ -114,5 +116,127 @@ input[type=tel]:focus:not([readonly]), input[type=text]:focus:not([readonly]){
 .div-message img{
   position: relative;
   top: 3px;
+  height: 20px;
+}
+.div-crear-user{
+  margin-top: 35px;
+}
+.div-crear-user input{
+  margin-bottom: 30px;
+  font-size: 1.3rem;
+}
+.div-crear-user img{
+  height: 25px;
+  position: absolute;
+  left: 10px;
+}
+.icono-name{
+  top: 10px;
+}
+.icono-password{
+  bottom: 40px;
+}
+.icono-mail{
+  top: 85px;
+}
+.advice{
+  padding: 0 10px;
+}
+/*pantalla de ingreso correcto de datos*/
+.div-success{
+  height: 100vh;
+}
+.ok-conte{
+  width: 100%;
+}
+.ok-conte h5{
+  line-height: 1.5;
+  font-weight: 500;
+}
+.img-ok{
+  height: 100px;
+}
+/*registro de tarjeta*/
+
+.icono-question{
+  position: absolute;
+  height: 25px;
+  top: 15px;
+  right: 15px;
+}
+.icono-card{
+  height: 20px;
+  position: absolute;
+  left: 10px;
+  top: 15px;
+}
+.icono-escaner{
+  height: 20px;
+  position: relative;
+  top: 3px;
+  right: 2px;
+}
+.div-date{
+  overflow: auto;
+  margin-bottom: 40px;
+}
+.div-date input{
+  font-size: 1.2rem;
+  padding: 5px 0;
+  width: 40px;
+  height: 2rem;
+  padding: 0 5px;
+}
+.div-date .gris-letra{
+  position: relative;
+  top: 7px;
+}
+.registerCard .icono-password{
+  height: 25px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.registerCard input{
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+.icono-engine{
+  height: 30px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+/*pagina final*/
+.div-arriba{
+  height: 230px;
+  padding-top: 40px;
+}
+.icono-happy-face{
+  height: 85px;
+}
+.div-eye{
+  position: relative;
+}
+.icono-eye{
+  height: 15px;
+  position: relative;
+  top: 3px;
+  padding-right: 5px;
+}
+.final-abajo-header{
+  padding: 15px 10px 0 10px;
+  border-bottom: 1px solid #3E102F;
+  display: flex;
+  justify-content: space-between;
+}
+.final-abajo-header h5{
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+.final-abajo-header img{
+  position: relative;
+  bottom: 3px;
   height: 20px;
 }
