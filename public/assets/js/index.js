@@ -26,7 +26,7 @@ const updated = function(){
   render(root);
 }
 const state = {
-  pagina: null,
+  pagina: 2,
   termsChecked: false,
   phoneChecked: false,
   phoneNumber: null

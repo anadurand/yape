@@ -1,19 +1,18 @@
 "use strict";
 
 const RegisterNumber = (updated) => {
-  const parent = $('<div></div>');
-  const divImg = $('<div></div>');
-  const img = $('<img src="assets/img/icons/phone.png">');
-  const h2 = $('<h2>Para comenzar validemos tu número</h2>');
-  const p = $('<p>Recibirás un SMS con un código de validación</p>');
-  const divForm = $('<div></div>');
+  const parent = $('<div class="initial-parent center-align"></div>');
+  const divImg = $('<div class="center-align"></div>');
+  const img = $('<img class="header-icon" src="assets/img/icons/phone.png">');
+  const h4 = $('<h4 class="gris-dark title-h4 center-align">Para comenzar validemos tu número</h4>');
+  const p = $('<p class="gris-letra title-p">Recibirás un SMS con un código de validación</p>');
+  const divForm = $('<div class="div-input"></div>');
   const icon = $('<img src="assets/img/icons/phoneandnumber.png">');
-  const input = $('<input type="tel" id ="phone" maxlength="9" required>');
-  const divTerms = $('<div></div>');
-  const checkbox = $('<input type="checkbox" id = "terms" required>');
-  const terms = $('<p>Acepto los <a href="#">Términos y condiciones.</a></p>');
-  const btnContinuar = $('<button id="next">continuar</button>');
-  btnContinuar.attr("disabled", true);
+  const input = $('<input type="tel" id ="phone" maxlength="11" class="center-align" required>');
+  const divTerms = $('<div class="div-terms"></div>');
+  const checkbox = $('<input type="checkbox" id = "terms" class="filled-in" required>');
+  const terms = $('<label for="terms">Acepto los <a href="#">Términos y condiciones.</a></label>');
+  const btnContinuar = $('<button id="next" class="btn disabled boton-amarillo">continuar</button>');
 
   divImg.append(img);
   divForm.append(icon);
@@ -21,7 +20,7 @@ const RegisterNumber = (updated) => {
   divTerms.append(checkbox);
   divTerms.append(terms);
   parent.append(divImg);
-  parent.append(h2);
+  parent.append(h4);
   parent.append(p);
   parent.append(divForm);
   parent.append(divTerms);
@@ -30,10 +29,12 @@ const RegisterNumber = (updated) => {
 
 
   input.on("keyup", function(e){
-    console.log(this.value);
-    if(e.which>=48 && e.which<=57 && this.value.length == 9){
+    this.value = this.value.replace(/ /g,"");
+    this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+    if(e.which>=48 && e.which<=57){
       state.phoneChecked = true;
-      state.phoneNumber = this.value;
+      state.phoneNumber = this.value.replace(/ /g,"");;
       habilitarBoton();
     }else {
       state.phoneChecked = false;

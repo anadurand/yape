@@ -2,8 +2,8 @@
 
 const habilitarBoton = function(){
   if(state.phoneChecked && state.termsChecked){
-    $("#next").attr("disabled", false);
+    $("#next").removeClass("disabled");
   }else{
-    $("#next").attr("disabled", true);
+    $("#next").addClass("disabled");
   }
 }
