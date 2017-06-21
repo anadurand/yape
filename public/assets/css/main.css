@@ -5,6 +5,7 @@ body{
   margin: 0;
   padding: 0;
 }
+
 /*utils*/
 .boton-amarillo{
   background-color: #fbd43b;
@@ -202,12 +203,15 @@ input[type=tel]:focus:not([readonly]), input[type=text]:focus:not([readonly]),in
   margin-bottom: 50px;
 }
 .icono-engine{
-  height: 30px;
+  height: 25px;
   position: absolute;
   top: 15px;
-  right: 15px;
+  right: 10px;
 }
 /*pagina final*/
+.final{
+  height: 100vh;
+}
 .div-arriba{
   height: 230px;
   padding-top: 40px;
@@ -239,4 +243,34 @@ input[type=tel]:focus:not([readonly]), input[type=text]:focus:not([readonly]),in
   position: relative;
   bottom: 3px;
   height: 20px;
+}
+.final-abajo-body{
+  padding: 10px;
+}
+.final-abajo-body .col{
+  padding: 0;
+}
+.final-abajo-body .col.s8{
+  padding: 30px 0 0 15px;
+}
+
+.final-abajo-body img{
+  height: 105px;
+}
+.final-abajo-body h5, .final-abajo-body p{
+  font-size: 1rem;
+  margin: 0;
+  color: #B4A1AE;
+}
+.final-abajo-footer{
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+.final-abajo-footer img{
+  height: 55px;
+}
+.final-abajo-footer p{
+  margin: 5px 0;
+  text-transform: uppercase;
 }

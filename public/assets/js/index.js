@@ -39,15 +39,15 @@ const updated = function(){
   render(root);
 }
 const state = {
-  pagina: 7,
+  pagina: null,
   termsChecked: false,
   phoneChecked: false,
-  phoneNumber: 123456789,
-  code: null,
-  userName: null,
-  userEmail: null,
-  userPassword: null,
-  creditCard: "1234567890876543"
+  phoneNumber: null
+  // code: null,
+  // userName: null,
+  // userEmail: null,
+  // userPassword: null,
+  // creditCard: "1234567890876543"
 
 }
 

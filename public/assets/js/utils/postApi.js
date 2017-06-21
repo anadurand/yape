@@ -42,7 +42,7 @@ const postCreateUser = (cellphone, user, mail, clave, updated)=> {
 
 const postRegisterCard = (cellphone, card, month, year, clave, updated)=> {
 
-  $.post("api/createUser", {phone: cellphone, cardNumber: card, cardMonth: month,cardYear: year, cardPassword: clave }, function(result){
+  $.post("api/registerCard", {phone: cellphone, cardNumber: card, cardMonth: month, cardYear: year, cardPassword: clave}, function(result){
     if(result.success){
       state.pagina = 7;
       updated();
