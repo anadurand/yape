@@ -43,12 +43,6 @@ const state = {
   termsChecked: false,
   phoneChecked: false,
   phoneNumber: null
-  // code: null,
-  // userName: null,
-  // userEmail: null,
-  // userPassword: null,
-  // creditCard: "1234567890876543"
-
 }
 
 

@@ -1,7 +1,7 @@
 "use strict";
 
 const habilitarBoton = function(){
-  if(state.phoneChecked && state.termsChecked){
+  if(state.phoneNumber && state.termsChecked){
     $("#next").removeClass("disabled");
   }else{
     $("#next").addClass("disabled");
@@ -21,5 +21,11 @@ const habilitarBtnCard = function(){
     $("#next").removeClass("disabled");
   }else{
     $("#next").addClass("disabled");
+  }
+}
+
+const validarNumero = (e)=>{
+  if(e.which< 47 || e.which>58){
+    e.preventDefault();
   }
 }

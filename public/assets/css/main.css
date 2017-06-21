@@ -31,7 +31,7 @@ body{
 
 /*pagina welcome*/
 .initial-parent{
-  height: 570px;
+  min-height: 565px;
   padding: 60px 29px 0 29px;
 }
 .carousel.carousel-slider{
@@ -82,7 +82,7 @@ body{
   position: relative;
   margin-top: 60px;
 }
-.div-input .icono-code{
+.div-input .icono-phone{
   height: 30px;
   position: absolute;
   top: 7px;
