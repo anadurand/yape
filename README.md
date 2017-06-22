@@ -31,7 +31,7 @@ En este proyecto pondremos a prueba todo lo aprendido durante el Sprint 5, por e
             Tener en cuenta que el API no permite más de 2 registros del mismo teléfono a la vez
 
       Imagenes de las primeras pantallas:
-       ![Pantallas Primer Hito](public/assets/img/pantallas/primerasPantallas.PNG)
+       ![Pantallas Primer Hito](public/assets/img/panatallas/primerasPantallas.PNG)
 
 #### - Segundo hito (miércoles 21/6):
         -Trabajar en las pantallas 3, 4 y 5
