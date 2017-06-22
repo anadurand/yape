@@ -34,29 +34,34 @@ const RegisterCard = (updated) => {
   parent.append(btnContinuar);
 
   var regex = /^[0-9]+$/;
-  input.on("keypress", validarNumero);
-  inputMonth.on("keypress", validarNumero);
-  inputYear.on("keypress", validarNumero);
+  input.on({
+    keypress: validarNumero,
+    keyup: function(e){
+            if(regex.test($(this).val()) && $(this).val().length == 16){
+               state.creditCard = $(this).val();
+             }else{ state.creditCard = null;}
+             habilitarBtnCard();
+           }
+  });
+  inputMonth.on({
+    keypress: validarNumero,
+    keyup: function(e){
+            if(regex.test($(this).val()) && $(this).val().length <= 2 && $(this).val()>0 && $(this).val()<13 ){
+               state.creditMonth = $(this).val();
+             }else{ state.creditMonth = null;}
+             habilitarBtnCard();
+           }
+  });
+  inputYear.on({
+    keypress: validarNumero,
+    keyup: function(e){
+              if(regex.test($(this).val()) && $(this).val().length <= 2 && $(this).val()>16 && $(this).val()< 25 ){
+                 state.creditYear = $(this).val();
+               }else{ state.creditYear = null;}
+               habilitarBtnCard();
+            }
+  });
 
-
-  input.on("keyup", function(e){
-    if(regex.test($(this).val()) && $(this).val().length == 16){
-       state.creditCard = $(this).val();
-     }else{ state.creditCard = null;}
-     habilitarBtnCard();
-  });
-  inputMonth.on("keyup", function(e){
-    if(regex.test($(this).val()) && $(this).val().length <= 2 && $(this).val()>0 && $(this).val()<13 ){
-       state.creditMonth = $(this).val();
-     }else{ state.creditMonth = null;}
-     habilitarBtnCard();
-  });
-  inputYear.on("keyup", function(e){
-    if(regex.test($(this).val()) && $(this).val().length <= 2 && $(this).val()>16 && $(this).val()< 25 ){
-       state.creditYear = $(this).val();
-     }else{ state.creditYear = null;}
-     habilitarBtnCard();
-  });
 
   btnContinuar.on("click", function(e){
     e.preventDefault();

@@ -15,7 +15,7 @@
    const inputPassword = $('<input type="password" maxlength="6" class="center-align morado" required placeholder="Ingresa clave de 6 dígitos">');
    const message = $('<p class="gris-letra advice">Cuida esta clave como oro, es tu acceso a Yape.</p>');
    const btnCrearCuenta = $('<button id="newAcount" class="btn disabled boton-amarillo">crear cuenta</button>');
-   const messageError = $('<p class="error"></p>');
+   const messageError = $('<p class="error rojo"></p>');
 
    divImg.append(img);
    divForm.append(iconName);
@@ -32,15 +32,18 @@
    parent.append(btnCrearCuenta);
    parent.append(messageError);
 
-   inputName.on("keypress", validarLetra);
-   inputName.on("keyup", function(e){
-     var regex = /^([a-zñáéíóú]+[\s]*)+$/;
-     if(regex.test($(this).val())){
-        state.userName= $(this).val();
-      }else{ state.userName = null;}
 
-      habilitarBtnCrearCuenta();
+   inputName.on({
+     keypress: validarLetra,
+     keyup: function(e){
+             var regex = /^([a-zñáéíóú]+[\s]*)+$/;
+             if(regex.test($(this).val())){
+                state.userName= $(this).val();
+              }else{ state.userName = null;}
+              habilitarBtnCrearCuenta();
+            }
    });
+
    inputEmail.on("keyup", function(e){
      // Expresion regular para validar el correo
      var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
@@ -51,22 +54,23 @@
      }
      habilitarBtnCrearCuenta();
    });
-   inputPassword.on("keypress", validarNumero);
-   inputPassword.on("keyup", function(e){
-     var regex = /^[0-9]+$/;
-     if(regex.test($(this).val()) && $(this).val().length == 6){
-        state.userPassword= $(this).val();
-      }else{ state.userPassword = null;}
-     habilitarBtnCrearCuenta();
 
+   inputPassword.on({
+     keypress: validarNumero,
+     keyup: function(e){
+               var regex = /^[0-9]+$/;
+               if(regex.test($(this).val()) && $(this).val().length == 6){
+                  state.userPassword= $(this).val();
+                }else{ state.userPassword = null;}
+               habilitarBtnCrearCuenta();
+             }
    });
+
 
    btnCrearCuenta.on("click", function(e){
      e.preventDefault();
      postCreateUser(state.phoneNumber, state.userName, state.userEmail, state.userPassword, updated);
    });
-
-
 
    return parent
  }

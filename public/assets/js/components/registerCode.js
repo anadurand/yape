@@ -14,7 +14,7 @@ const RegisterCode = (updated)=>{
   const message = $('<p>Reintentar en <img src="assets/img/icons/clock.png"></p>');
   const counter = $('<span class="counter">21</span>');
   const code = $('<span class="newCode">Ingrese en siguiente codigo: '+ state.code + '</span>');
-  const messageError =$('<p class="error"></p>');
+  const messageError =$('<p class="error rojo"></p>');
 
   divImg.append(img);
   divForm.append(icon);
@@ -32,14 +32,15 @@ const RegisterCode = (updated)=>{
   let countDown = 21;
   var count = setInterval(function(){postResendCode(state.phoneNumber); countDown = 21; $('.counter').text("21"); }, 21000);
   var countClock = setInterval(function(){ countDown= countDown-1; $(".counter").text(countDown); }, 1000);
-
-  input.on("keypress", validarNumero);
-  input.on("keyup", function(e){
-      if(state.code == this.value){
-        clearInterval(count);
-        state.pagina = 3;
-        updated();
-      }
+  input.on({
+    keypress: validarNumero,
+    keyup: function(e){
+              if(state.code == this.value){
+                clearInterval(count);
+                state.pagina = 3;
+                updated();
+              }
+            }
   });
 
   return parent;

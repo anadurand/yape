@@ -7,6 +7,10 @@ body{
 }
 
 /*utils*/
+.rojo{
+  color: #f64552;
+  font-weight: bold;
+}
 .boton-amarillo{
   background-color: #fbd43b;
 }
@@ -30,6 +34,14 @@ body{
 }
 .btn:hover{
   background-color: #fbd43b;
+}
+.negrita{
+  color: black;
+  font-weight: bold;
+  padding-left: 10px;
+}
+.error{
+
 }
 
 /*pagina welcome*/

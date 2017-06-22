@@ -13,7 +13,7 @@ const RegisterNumber = (updated) => {
   const checkbox = $('<input type="checkbox" id = "terms" class="filled-in" required>');
   const terms = $('<label for="terms">Acepto los <a href="#">Términos y condiciones.</a></label>');
   const btnContinuar = $('<button id="next" class="btn disabled boton-amarillo">continuar</button>');
-  const messageError = $('<p class="error"></p>');
+  const messageError = $('<p class="error rojo"></p>');
 
   divImg.append(img);
   divForm.append(icon);
@@ -29,23 +29,23 @@ const RegisterNumber = (updated) => {
   parent.append(messageError);
 
 
+  input.on({
+    keypress: validarNumero,
+    keyup: function(e){
+      e.preventDefault();
+      var regex = /^[0-9]+$/;
+      this.value = this.value.replace(/ /g,"");
+      this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+      var proto = this.value.replace(/ /g,"");
+      console.log(proto);
+      if(regex.test(proto) && proto.length == 9){
+         state.phoneNumber= proto;
+       }else{ state.phoneNumber = null;}
 
-  input.on("keypress", validarNumero);
+      habilitarBoton();
+      }
+    });
 
-  input.on("keyup", function(e){
-    e.preventDefault();
-    var regex = /^[0-9]+$/;
-    this.value = this.value.replace(/ /g,"");
-    this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-    var proto = this.value.replace(/ /g,"");
-    console.log(proto);
-    if(regex.test(proto) && proto.length == 9){
-       state.phoneNumber= proto;
-     }else{ state.phoneNumber = null;}
-
-    habilitarBoton();
-
-  });
   checkbox.on("change", (e)=> {
     e.preventDefault();
     state.termsChecked = !state.termsChecked;
