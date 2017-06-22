@@ -11,6 +11,7 @@ const RegisterCardPassword = (updated)=> {
   const iconLock = $('<img src="assets/img/icons/lock.png" class="icono-password">');
   const input = $('<input type="password" maxlength="4" class="center-align morado" placeholder=".  .  .  ."equired>');
   const btnContinuar = $('<button id="next" class="btn disabled boton-amarillo">registrar</button>');
+  const messageError =$('<p class="error"></p>');
 
 
   divImg.append(img);
@@ -22,11 +23,12 @@ const RegisterCardPassword = (updated)=> {
   parent.append(p);
   parent.append(divForm);
   parent.append(btnContinuar);
+  parent.append(messageError);
 
+  input.on("keypress", validarNumero);
   input.on("keyup", function(e){
     var regex = /^[0-9]+$/;
     if(regex.test($(this).val()) && $(this).val().length == 4){
-      console.log("ok pass");
        state.creditPassword = $(this).val();
        $("#next").removeClass("disabled");
      }else{

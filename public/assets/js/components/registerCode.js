@@ -12,7 +12,8 @@ const RegisterCode = (updated)=>{
   const input = $('<input type="text" id ="code" maxlength="6" class="center-align" required placeholder="-  -  -  -  -">');
   const divMessage = $('<div class="div-message"></div>');
   const message = $('<p>Reintentar en <img src="assets/img/icons/clock.png"> 21</p>');
-  const code = $('<span class="newCode">'+ state.code + '</span>');
+  const code = $('<span class="newCode">Ingrese en siguiente codigo: '+ state.code + '</span>');
+  const messageError =$('<p class="error"></p>');
 
   divImg.append(img);
   divForm.append(icon);
@@ -24,17 +25,17 @@ const RegisterCode = (updated)=>{
   parent.append(divForm);
   parent.append(divMessage);
   parent.append(code);
+  parent.append(messageError);
 
   var count = setInterval(function(){postResendCode(state.phoneNumber);}, 21000);
+
+  input.on("keypress", validarNumero);
   input.on("keyup", function(e){
-    if(e.which>=48 && e.which<=57){
       if(state.code == this.value){
         clearInterval(count);
         state.pagina = 3;
         updated();
       }
-    }
-
   });
 
   return parent;

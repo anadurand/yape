@@ -13,6 +13,7 @@ const RegisterNumber = (updated) => {
   const checkbox = $('<input type="checkbox" id = "terms" class="filled-in" required>');
   const terms = $('<label for="terms">Acepto los <a href="#">Términos y condiciones.</a></label>');
   const btnContinuar = $('<button id="next" class="btn disabled boton-amarillo">continuar</button>');
+  const messageError = $('<p class="error"></p>');
 
   divImg.append(img);
   divForm.append(icon);
@@ -25,9 +26,10 @@ const RegisterNumber = (updated) => {
   parent.append(divForm);
   parent.append(divTerms);
   parent.append(btnContinuar);
+  parent.append(messageError);
 
 
-  
+
   input.on("keypress", validarNumero);
 
   input.on("keyup", function(e){

@@ -42,7 +42,7 @@ const state = {
   pagina: null,
   termsChecked: false,
   phoneChecked: false,
-  phoneNumber: null
+  phoneNumber: null,
 }
 
 

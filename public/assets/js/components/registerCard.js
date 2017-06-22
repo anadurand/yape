@@ -33,28 +33,26 @@ const RegisterCard = (updated) => {
   parent.append(divDate);
   parent.append(btnContinuar);
 
+  var regex = /^[0-9]+$/;
+  input.on("keypress", validarNumero);
+  inputMonth.on("keypress", validarNumero);
+  inputYear.on("keypress", validarNumero);
+
 
   input.on("keyup", function(e){
-    var regex = /^[0-9]+$/;
     if(regex.test($(this).val()) && $(this).val().length == 16){
-      console.log("ok card");
        state.creditCard = $(this).val();
      }else{ state.creditCard = null;}
      habilitarBtnCard();
   });
   inputMonth.on("keyup", function(e){
-    console.log($(this).val());
-    var regex = /^[0-9]+$/;
     if(regex.test($(this).val()) && $(this).val().length <= 2 && $(this).val()>0 && $(this).val()<13 ){
-      console.log("ok mes");
        state.creditMonth = $(this).val();
      }else{ state.creditMonth = null;}
      habilitarBtnCard();
   });
   inputYear.on("keyup", function(e){
-    var regex = /^[0-9]+$/;
     if(regex.test($(this).val()) && $(this).val().length <= 2 && $(this).val()>16 && $(this).val()< 25 ){
-      console.log("ok año");
        state.creditYear = $(this).val();
      }else{ state.creditYear = null;}
      habilitarBtnCard();

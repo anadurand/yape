@@ -9,7 +9,7 @@ const postRegisterNumber = (cellphone, termsChecked, updated) => {
           state.code = result.data.code;
           updated();
         }else{
-          $("#next").after('<p>'+ result.message + '<p>');
+          $(".error").text(result.message);
         }
     });
 }
@@ -19,9 +19,9 @@ const postResendCode = (cellphone)=>{
         if(result.success){
           console.log(result.data);
           state.code=result.data;
-          $(".newCode").text(result.data);
+          $(".newCode").text("Ingrese en siguiente codigo:" + result.data);
         }else{
-          $(".newCode").text(result.message);
+          $(".error").text(result.message);
         }
     });
 
@@ -34,7 +34,7 @@ const postCreateUser = (cellphone, user, mail, clave, updated)=> {
       state.pagina = 4;
       updated();
     }else{
-      $("#newAcount").after('<p>'+ result.message + '<p>');
+      $(".error").text(result.message);
     }
   });
 
@@ -47,7 +47,7 @@ const postRegisterCard = (cellphone, card, month, year, clave, updated)=> {
       state.pagina = 7;
       updated();
     }else{
-      $("#next").after('<p>'+ result.message + '<p>');
+      $(".error").text(result.message);
     }
   });
 

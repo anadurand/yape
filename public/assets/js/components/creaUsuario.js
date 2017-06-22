@@ -15,6 +15,7 @@
    const inputPassword = $('<input type="password" maxlength="6" class="center-align morado" required placeholder="Ingresa clave de 6 dígitos">');
    const message = $('<p class="gris-letra advice">Cuida esta clave como oro, es tu acceso a Yape.</p>');
    const btnCrearCuenta = $('<button id="newAcount" class="btn disabled boton-amarillo">crear cuenta</button>');
+   const messageError = $('<p class="error"></p>');
 
    divImg.append(img);
    divForm.append(iconName);
@@ -29,7 +30,9 @@
    parent.append(divForm);
    parent.append(message);
    parent.append(btnCrearCuenta);
+   parent.append(messageError);
 
+   inputName.on("keypress", validarLetra);
    inputName.on("keyup", function(e){
      var regex = /^([a-zñáéíóú]+[\s]*)+$/;
      if(regex.test($(this).val())){
@@ -45,10 +48,10 @@
        state.userEmail = $(this).val().trim();
      } else {
        state.userEmail = null;
-       console.log("mail mal");
      }
      habilitarBtnCrearCuenta();
    });
+   inputPassword.on("keypress", validarNumero);
    inputPassword.on("keyup", function(e){
      var regex = /^[0-9]+$/;
      if(regex.test($(this).val()) && $(this).val().length == 6){
