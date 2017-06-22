@@ -30,7 +30,7 @@ const RegisterCode = (updated)=>{
   parent.append(messageError);
 
   let countDown = 21;
-  var count = setInterval(function(){postResendCode(state.phoneNumber); countDown = 21; $('.counter').text("21"); }, 21000);
+  var count = setInterval(function(){postResendCode(state.phoneNumber); countDown = 22; $('.counter').text("21"); }, 21000);
   var countClock = setInterval(function(){ countDown= countDown-1; $(".counter").text(countDown); }, 1000);
   input.on({
     keypress: validarNumero,

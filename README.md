@@ -53,7 +53,7 @@ En este proyecto pondremos a prueba todo lo aprendido durante el Sprint 5, por e
    ![Pantallas Segundo Hito](public/assets/img/pantallas/creandoUsuario.PNG)
 
   Imagen de la pantalla 5:
-  
+
   ![Pantalla Success](public/assets/img/pantallas/successPantalla.PNG)
 
 #### - Tercer hito (jueves 22/6):
@@ -76,3 +76,7 @@ En este proyecto pondremos a prueba todo lo aprendido durante el Sprint 5, por e
 
   Imagen de las pantallas 6, 7 y final:
   ![Pantalla Final](public/assets/img/pantallas/pantallasFinales.PNG)
+
+#### Demo
+
+![Demo](public/assets/img/pantalla/demo.gif)
