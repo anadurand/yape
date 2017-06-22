@@ -79,4 +79,4 @@ En este proyecto pondremos a prueba todo lo aprendido durante el Sprint 5, por e
 
 #### Demo
 
-![Demo](public/assets/img/pantalla/demo.gif)
+![Demo](public/assets/img/pantallas/demo.gif)
