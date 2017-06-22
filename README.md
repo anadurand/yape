@@ -53,6 +53,7 @@ En este proyecto pondremos a prueba todo lo aprendido durante el Sprint 5, por e
    ![Pantallas Segundo Hito](public/assets/img/pantallas/creandoUsuario.PNG)
 
   Imagen de la pantalla 5:
+  
   ![Pantalla Success](public/assets/img/pantallas/successPantalla.PNG)
 
 #### - Tercer hito (jueves 22/6):
@@ -73,5 +74,5 @@ En este proyecto pondremos a prueba todo lo aprendido durante el Sprint 5, por e
             Pantalla Final:
             Es la pantalla final a donde se llega después del registro. Esta pantalla no tiene funcionalidad activa: sólo debe mostrarse tal cual se ve
 
-    Imagen de las pantallas 6, 7 y final:
-    ![Pantalla Success](public/assets/img/pantallas/pantallasFinales.PNG)
+  Imagen de las pantallas 6, 7 y final:
+  ![Pantalla Final](public/assets/img/pantallas/pantallasFinales.PNG)
