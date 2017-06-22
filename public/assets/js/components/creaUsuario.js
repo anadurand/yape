@@ -36,7 +36,7 @@
    inputName.on({
      keypress: validarLetra,
      keyup: function(e){
-             var regex = /^([a-zñáéíóú]+[\s]*)+$/;
+             var regex = /^([a-zñáéíóúA-ZÑÁÉÍÓÚ]+[\s]*)+$/;
              if(regex.test($(this).val())){
                 state.userName= $(this).val();
               }else{ state.userName = null;}
