@@ -28,6 +28,9 @@ body{
 .morado-dark{
   background-color: #38052a;
 }
+.btn:hover{
+  background-color: #fbd43b;
+}
 
 /*pagina welcome*/
 .initial-parent{
@@ -83,6 +86,12 @@ body{
   margin-top: 60px;
 }
 .div-input .icono-phone{
+  height: 30px;
+  position: absolute;
+  top: 7px;
+  left: 10px;
+}
+.div-input .icono-code{
   height: 30px;
   position: absolute;
   top: 7px;

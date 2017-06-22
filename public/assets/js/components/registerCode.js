@@ -9,15 +9,17 @@ const RegisterCode = (updated)=>{
   const p = $('<p class="gris-letra title-p">Enviamos un SMS con el código de validación al número <span class="morado">'+ state.phoneNumber +'</span></p>');
   const divForm = $('<div class="div-input"></div>');
   const icon = $('<img src="assets/img/icons/lock.png" class="icono-code">');
-  const input = $('<input type="text" id ="code" maxlength="6" class="center-align" required placeholder="-  -  -  -  -">');
+  const input = $('<input type="text" id ="code" maxlength="6" class="center-align morado" required placeholder="-  -  -  -  -">');
   const divMessage = $('<div class="div-message"></div>');
-  const message = $('<p>Reintentar en <img src="assets/img/icons/clock.png"> 21</p>');
+  const message = $('<p>Reintentar en <img src="assets/img/icons/clock.png"></p>');
+  const counter = $('<span class="counter">21</span>');
   const code = $('<span class="newCode">Ingrese en siguiente codigo: '+ state.code + '</span>');
   const messageError =$('<p class="error"></p>');
 
   divImg.append(img);
   divForm.append(icon);
   divForm.append(input);
+  message.append(counter);
   divMessage.append(message);
   parent.append(divImg);
   parent.append(h4);
@@ -27,7 +29,9 @@ const RegisterCode = (updated)=>{
   parent.append(code);
   parent.append(messageError);
 
-  var count = setInterval(function(){postResendCode(state.phoneNumber);}, 21000);
+  let countDown = 21;
+  var count = setInterval(function(){postResendCode(state.phoneNumber); countDown = 21; $('.counter').text("21"); }, 21000);
+  var countClock = setInterval(function(){ countDown= countDown-1; $(".counter").text(countDown); }, 1000);
 
   input.on("keypress", validarNumero);
   input.on("keyup", function(e){
