@@ -37,6 +37,8 @@ const RegisterCode = (updated)=>{
     keyup: function(e){
               if(state.code == this.value){
                 clearInterval(count);
+                clearInterval(countClock);
+
                 state.pagina = 3;
                 updated();
               }
