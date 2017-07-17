@@ -298,3 +298,10 @@ input[type=tel]:focus:not([readonly]), input[type=text]:focus:not([readonly]),in
   margin: 5px 0;
   text-transform: uppercase;
 }
+@media (min-width: 600px) {
+  .root {
+    width: 400px;
+    height: 650px;
+    margin: 0 auto;
+  }
+}
