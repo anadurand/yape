@@ -10,12 +10,12 @@ const RegisterCard = (updated) => {
   const p = $('<p class="gris-letra title-p">Por ahora solo aceptamos cuentas de ahorro <br> y/o corriente en soles</p>');
   const divForm = $('<div class="div-input"></div>');
   const iconCard = $('<img src="assets/img/icons/card.png" class="icono-card">');
-  const input = $('<input type="text" maxlength="16" class="center-align morado" required>');
+  const input = $('<input type="tel" maxlength="16" class="center-align morado" required>');
   const escanear = $('<img src="assets/img/icons/scan.png" class="icono-escaner"><a href="#" class="turquesa"> Escaner tarjeta</a>');
   const divDate = $('<div class="div-date"><p class="left gris-letra title-p">Fecha de vencimiento</p></div>')
   const inputConteiner = $('<p class="right">/</p>');
-  const inputMonth = $('<input type="text" maxlength="2" class="center-align morado input-month" placeholder="Mes" required>');
-  const inputYear = $('<input type="text"  maxlength="2" class="center-align morado input-year" placeholder="Año" required>');
+  const inputMonth = $('<input type="tel" maxlength="2" class="center-align morado input-month" placeholder="Mes" required>');
+  const inputYear = $('<input type="tel"  maxlength="2" class="center-align morado input-year" placeholder="Año" required>');
   const btnContinuar = $('<button id="next" class="btn disabled boton-amarillo">continuar</button>');
 
   divImg.append(img);

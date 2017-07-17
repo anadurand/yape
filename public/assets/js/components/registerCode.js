@@ -9,7 +9,7 @@ const RegisterCode = (updated)=>{
   const p = $('<p class="gris-letra title-p">Enviamos un SMS con el código de validación al número <span class="morado">'+ state.phoneNumber +'</span></p>');
   const divForm = $('<div class="div-input"></div>');
   const icon = $('<img src="assets/img/icons/lock.png" class="icono-code">');
-  const input = $('<input type="text" id ="code" maxlength="6" class="center-align morado" required placeholder="-  -  -  -  -">');
+  const input = $('<input type="tel" id ="code" maxlength="6" class="center-align morado" required placeholder="-  -  -  -  -">');
   const divMessage = $('<div class="div-message"></div>');
   const message = $('<p>Reintentar en <img src="assets/img/icons/clock.png"></p>');
   const counter = $('<span class="counter">21</span>');
